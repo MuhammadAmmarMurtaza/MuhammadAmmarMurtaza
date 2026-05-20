@@ -51,6 +51,27 @@ My research focuses on developing, training, testing and eventually deploying DR
 - `realsense-ros2-drone-perception`
 - `autonomous-drone-racing-literature`
 
+### `flightmare-headless-rl-wrapper`
+
+Modern Gymnasium/SB3 wrapper for headless Flightmare quadrotor RL training using Python 3.10, PyTorch, and Stable-Baselines3.
+
+Current status:
+
+- Flightmare headless backend connected
+- Raw vector wrapper implemented
+- Gymnasium-compatible single-env wrapper implemented
+- SB3 VecEnv wrapper implemented
+- Scaled-action VecEnv wrapper implemented
+- PPO headless training and evaluation working
+- Best current action scale: ±0.5
+- Latest PPO evaluation: mean reward 2.5187 ± 0.0925, mean length 36.1
+
+### `drl-drone-navigation-thesis`
+
+Main public research hub for my MS thesis project on Deep Reinforcement Learning-Based Autonomous Drone Navigation.
+
+This repository tracks the research pipeline, setup notes, simulator decisions, progress logs, and future experimental roadmap.
+
 ## Research Goal
 
 My long-term goal is to develop reliable DRL-based drone navigation policies that can be trained in simulation and later adapted for real-world autonomous flight.
