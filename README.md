@@ -37,7 +37,7 @@ My research focuses on developing, training, testing and eventually deploying DR
 2. Test drone control baselines in PyBullet
 3. Use Flightmare as the main thesis simulator
 4. Build a modern Gymnasium-compatible Flightmare wrapper
-5. Train policies using SB3, RLlib, and PyTorch
+5. Train policies using SB3, RLlib and PyTorch
 6. Integrate policy inference with ROS 2
 7. Test RealSense-based perception
 8. Move toward Jetson-based deployment
@@ -53,7 +53,7 @@ My research focuses on developing, training, testing and eventually deploying DR
 
 ### `flightmare-headless-rl-wrapper`
 
-Modern Gymnasium/SB3 wrapper for headless Flightmare quadrotor RL training using Python 3.10, PyTorch, and Stable-Baselines3.
+Modern Gymnasium/SB3 wrapper for headless Flightmare quadrotor RL training using Python 3.10, PyTorch and Stable-Baselines3.
 
 Current status:
 
@@ -70,8 +70,54 @@ Current status:
 
 Main public research hub for my MS thesis project on Deep Reinforcement Learning-Based Autonomous Drone Navigation.
 
-This repository tracks the research pipeline, setup notes, simulator decisions, progress logs, and future experimental roadmap.
+This repository tracks the research pipeline, setup notes, simulator decisions, progress logs and future experimental roadmap.
 
 ## Research Goal
 
 My long-term goal is to develop reliable DRL-based drone navigation policies that can be trained in simulation and later adapted for real-world autonomous flight.
+
+## Main Thesis Repositories
+
+### `drl-drone-navigation-thesis`
+
+Main public research hub for my MS thesis project:
+
+**Deep Reinforcement Learning-Based Autonomous Drone Navigation**
+
+This repository tracks the research pipeline, simulator decisions, setup notes, progress logs and future experimental roadmap.
+
+---
+
+### `flightmare-headless-rl-wrapper`
+
+Mode A of my Flightmare thesis pipeline.
+
+Modern Gymnasium/SB3 wrapper for headless Flightmare quadrotor RL training using Python 3.10, PyTorch and Stable-Baselines3.
+
+Current highlights:
+
+- Raw Flightmare vector wrapper
+- Gymnasium-compatible single-env wrapper
+- SB3-compatible VecEnv wrapper
+- Scaled-action VecEnv wrapper
+- PPO headless training and evaluation
+- Action-scale ablation
+- Best current internal action scale: ±0.5
+
+---
+
+### `flightmare_racing_visualization`
+
+Mode B of my Flightmare thesis pipeline.
+
+Configurable Flightmare UnityBridge tools for quadrotor racing visualization, YAML-driven racing tracks, local-origin calibration, onboard camera capture and gate-passing CSV logging.
+
+Current highlights:
+
+- YAML track loader
+- Scene selection for Warehouse, Industrial, Garage and NatureForest
+- Local-origin coordinate calibration
+- RGB/depth/segmentation camera capture testing
+- Gate-passing CSV logger
+- UZH/RPG-inspired SplitS, Figure 8 and Kidney track templates
+- GIF previews for visual demonstration
