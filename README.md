@@ -68,6 +68,25 @@ This repository tracks the research pipeline, simulator decisions, setup notes, 
 
 ---
 
+### `rl-gym-pybullet-drone-baselines`
+
+Foundational RL and PyBullet drone baseline repository.
+
+This repository documents my early reinforcement learning algorithm exploration using Gymnasium, Stable-Baselines3, RLlib/Ray, PyTorch, and PyBullet.
+
+Current highlights:
+
+- SB3 CartPole-v1 experiments with PPO, A2C, and DQN
+- RLlib CartPole-v1 experiments with PPO and DQN
+- SB3 Pendulum-v1 continuous-control experiments with PPO and SAC
+- RLlib Pendulum-v1 baseline scripts
+- SB3 MountainCarContinuous-v0 experiments with SAC, TD3, and PPO
+- Initial external `gym-pybullet-drones` visual simulation testing
+- Continuous-control learning path toward drone RL
+- RLlib 2.55.1 new API stack notes
+
+---
+
 ### `flightmare-headless-rl-wrapper`
 
 Mode A of my Flightmare thesis pipeline.
