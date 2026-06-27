@@ -56,15 +56,34 @@ My long-term goal is to develop reliable DRL-based drone navigation policies tha
 - `realsense-ros2-drone-perception`
 - `autonomous-drone-racing-literature`
 
-## Main Thesis Repositories
+## Main Thesis Repository Ecosystem
 
-### `drl-drone-navigation-thesis`
-
-Main public research hub for my MS thesis project:
+My MS thesis/research direction is:
 
 **Deep Reinforcement Learning-Based Autonomous Drone Navigation**
 
-This repository tracks the research pipeline, simulator decisions, setup notes, progress logs and future experimental roadmap.
+Current focused technical direction:
+
+**From Privileged State to Vision Features: A Practical Flightmare Pipeline for DRL-Based Drone Gate Navigation**
+
+The portfolio is organized as a staged research pipeline.
+
+| Repository | Role |
+|---|---|
+| `drl-drone-navigation-thesis` | Main thesis hub, roadmap, setup notes, and progress tracking |
+| `rl-gym-pybullet-drone-baselines` | Foundational Gymnasium, SB3, RLlib, continuous-control, and PyBullet drone baseline work |
+| `flightmare-headless-rl-wrapper` | Flightmare headless RL wrapper and early Flightmare RL environment work |
+| `flightmare_racing_visualization` | Flightmare UnityBridge visualization, YAML racing tracks, and gate-logging tools |
+| `flightmare-vision-aware-drl-pipeline` | Implementation/pipeline repo for vision-aware DRL gate-navigation experiments |
+| `flightmare-vision-aware-drl-results` | Curated thesis results and visual evidence archive |
+
+---
+
+### `drl-drone-navigation-thesis`
+
+Main public research hub for my MS thesis project.
+
+This repository tracks the research pipeline, simulator decisions, setup notes, progress logs, and future experimental roadmap.
 
 ---
 
@@ -72,26 +91,24 @@ This repository tracks the research pipeline, simulator decisions, setup notes, 
 
 Foundational RL and PyBullet drone baseline repository.
 
-This repository documents my early reinforcement learning algorithm exploration using Gymnasium, Stable-Baselines3, RLlib/Ray, PyTorch, and PyBullet.
+This repository documents early reinforcement learning algorithm exploration using Gymnasium, Stable-Baselines3, RLlib/Ray, PyTorch, and PyBullet.
 
 Current highlights:
 
 - SB3 CartPole-v1 experiments with PPO, A2C, and DQN
 - RLlib CartPole-v1 experiments with PPO and DQN
 - SB3 Pendulum-v1 continuous-control experiments with PPO and SAC
-- RLlib Pendulum-v1 baseline scripts
 - SB3 MountainCarContinuous-v0 experiments with SAC, TD3, and PPO
 - Initial external `gym-pybullet-drones` visual simulation testing
 - Continuous-control learning path toward drone RL
-- RLlib 2.55.1 new API stack notes
 
 ---
 
 ### `flightmare-headless-rl-wrapper`
 
-Mode A of my Flightmare thesis pipeline.
+Reusable headless RL wrapper around Flightmare.
 
-Modern Gymnasium/SB3 wrapper for headless Flightmare quadrotor RL training using Python 3.10, PyTorch and Stable-Baselines3.
+This repository modernizes Flightmare headless RL training using Python 3.10, Gymnasium-style wrappers, Stable-Baselines3, and PyTorch.
 
 Current highlights:
 
@@ -101,22 +118,66 @@ Current highlights:
 - Scaled-action VecEnv wrapper
 - PPO headless training and evaluation
 - Action-scale ablation
-- Best current internal action scale: ±0.5
 
 ---
 
 ### `flightmare_racing_visualization`
 
-Mode B of my Flightmare thesis pipeline.
-
-Configurable Flightmare UnityBridge tools for quadrotor racing visualization, YAML-driven racing tracks, local-origin calibration, onboard camera capture and gate-passing CSV logging.
+Flightmare UnityBridge visualization and racing-track tooling.
 
 Current highlights:
 
 - YAML track loader
-- Scene selection for Warehouse, Industrial, Garage and NatureForest
+- Scene selection for Warehouse, Industrial, Garage, and NatureForest
 - Local-origin coordinate calibration
 - RGB/depth/segmentation camera capture testing
 - Gate-passing CSV logger
-- UZH/RPG-inspired SplitS, Figure 8 and Kidney track templates
+- UZH/RPG-inspired SplitS, Figure 8, and Kidney track templates
 - GIF previews for visual demonstration
+
+---
+
+### `flightmare-vision-aware-drl-pipeline`
+
+Reusable Flightmare vision-aware DRL gate-navigation pipeline.
+
+This repository contains implementation-oriented tools for:
+
+- Privileged-state teacher PPO training
+- Teacher rollout dataset generation
+- Compact gate/vision-feature observations
+- 25D vision-proprioceptive student observations
+- Imitation-learning student policy training
+- PPO-from-scratch baselines
+- IL-initialized PPO fine-tuning
+- Robustness evaluation
+- UnityBridge replay export
+
+This repository shows the engineering implementation and reusable research pipeline.
+
+---
+
+### `flightmare-vision-aware-drl-results`
+
+Curated Flightmare visual evidence and result archive for DRL-based autonomous drone gate navigation.
+
+This repository documents the progression from privileged PPO teacher training to teacher rollout generation, imitation learning, PPO-from-scratch baselines, robustness evaluation, and UnityBridge replay validation.
+
+Highlights:
+
+- Phase-wise thesis reports
+- Policy comparison tables
+- Failure-mode analysis
+- Observation-space comparison
+- Phase 5 imitation-learning diagnostics
+- Phase 8 robustness plots
+- Phase 9 UnityBridge replay GIFs and MP4s
+- Onboard RGB and feature-camera consistency evidence
+
+Primary result:
+
+A 25D vision-proprioceptive imitation-learning student completed the T02 three-gate Flightmare replay in UnityBridge visual validation.
+
+Boundary:
+
+This is replay-based visual validation of a compact vision-proprioceptive policy, not raw RGB end-to-end real-drone deployment.
